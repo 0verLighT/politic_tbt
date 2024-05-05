@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss", "@nuxt/image"],
+  modules: [
+    "@nuxtjs/i18n",
+    "@nuxtjs/tailwindcss",
+    "@nuxt/image",
+    "@nuxtjs/sitemap",
+  ],
   i18n: {
     baseUrl: "https://qingque.me",
     strategy: "prefix",
@@ -16,6 +21,9 @@ export default defineNuxtConfig({
       { code: "fr", iso: "fr-FR", file: "locales/fr-FR.js" },
       { code: "en", iso: "en-US", file: "locales/en-US.js" },
     ],
+  },
+  site: {
+    url: "https://qingque.me",
   },
   app: {
     head: {
