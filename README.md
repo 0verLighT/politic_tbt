@@ -1,29 +1,30 @@
-# Plotic TBT 
+# Plotic TBT
 
 
 ## Présentation
 
-> Ce projet est un site web pour but de tour par tour contre ses amis.
+> Ce projet est un site web ayant pour objectif de faire un jeu de tour par tour contre ses amis.
 
 ## Approche technique
 
-Vu que ce projet avec devoir gère du back-end et du front-end je vais utiliser deux frameworks :
+Vu que ce projet va devoir gérer du back-end et du front-end je vais utiliser deux frameworks :
 
-- [Adonis.js](https://adonisjs.com) : C'est un frameworks qui permet de gèrer le back-end d'une application web avec des systèmes de gestion de routes, des models pour les base de données avec leur propre ORM [lucid](https://lucid.adonisjs.com/docs/introduction), des validator avec [vine](https://vinejs.dev/docs/introduction), Adonis permet aussi de gère un système de compte avec son propre système de connexion ou via Ouath2 pour ce connecté via Google, Github ect…
+- [Adonis.js](https://adonisjs.com) : C'est un frameworks qui permet de gérer le back-end d'une application web avec des systèmes de gestion de routes, des modèles pour les bases de données avec leur propre ORM [lucid](https://lucid.adonisjs.com/docs/introduction), des validator avec [vine](https://vinejs.dev/docs/introduction), Adonis permet aussi de gérer un système de compte avec son propre système de connexion ou via Ouath2 pour ce connecter via Google, Github ect…
 
-- [React](https://fr.react.dev?uwu=true) : React lui sera là pour la partie interface avec [Tailwind CSS](https://tailwindcss.com/) pour faire le style. Et pour pouvoir gère possiblement un classement et une page profils.
+- [React](https://fr.react.dev?uwu=true) : React lui sera là pour la partie interface avec [Tailwind CSS](https://tailwindcss.com/) pour faire le style, et pour pouvoir gérer possiblement un classement et une page des profils utilisateurs.
 
-Pour ce qui est de stocker les données des utilisateurs ce projet va utiliser [PostgreSQL](https://www.postgresql.org/) avec comme ORM celui de Adonis Lucid.
+Pour ce qui est de stocker les données des utilisateurs, je vais pour ce projet utiliser [PostgreSQL](https://www.postgresql.org/) avec comme ORM celui de Adonis Lucid.
 
-La base de données va pouvoir stoker les connexions des utilisateurs ,leur ELO et leur historique de partie.
+La base de données va pouvoir stoker les connexions des utilisateurs, leur ELO et leur historique de parties.
 
-La base de Adonis utiliser pour crée ce projet est avec [Inertia](https://inertiajs.com/) et React avec le SSR (Server-side rendering), inertia permet de liée le back-end et le front-end.
+La base de Adonis utilisée pour créer ce projet est mise en relation avec [Inertia](https://inertiajs.com/) et React. Inertia permet de lier le back-end et le front-end.
 
 ### Système de connexion
 
-Un utilisateur ne pourra pas lancer de partie s'il n'est pas connecté au préalablement. 
+Un utilisateur ne pourra pas lancer de partie s'il n'est pas connecté préalablement.
 
-Pour connecté simultanément deux personnes pour faire une partie projet va utilise le module socket.io de Adonisjs pour gère les web Socket. Utilisation de Création de code / rejoindre une partie 
+Pour connecter simultanément deux personnes pour faire une partie, le projet va employer le module socket.io de Adonisjs pour gérer les WebSockets.
+Pour rejoindre une partie, l'utilisateur saisit un code unique généré par le site et transmis à l'utilisateur hôte de la partie.
 
 ## Structure du site
 
@@ -33,24 +34,24 @@ Pour connecté simultanément deux personnes pour faire une partie projet va uti
 │   └── server_error.tsx
 └── home.tsx
 ```
-La route `home.tsx` équivaut à la racine pour le vérifier aller dans le fichier `start/routes.ts`.
+La route `home.tsx` équivaut à la racine. Pour le vérifier, il suffit de se rendre dans le fichier `start/routes.ts`.
 
-Le dossier ``errors`` est là ou l'utilisateur est envoiyé si le server ou le client recontre une erreur.
+Le dossier ``errors`` est le chemin vers lequel l'utilisateur est envoyé si le serveur ou le client rencontrent une erreur.
 Exemple :
-- Si l'utilisateur fait une erreur de route **404** : Il seras envoyé sur la page ``errors/not-found.tsx``
-- Si par contre c'est le server qui rencontre une erreur typiquement l'erreur **504** l'utilisateur sera envoiyé vers la page ``errors/server-errors.tsx``
+- Si l'utilisateur fait une erreur de route **404** : il sera envoyé sur la page ``errors/not-found.tsx``
+- Si par contre c'est le serveur qui rencontre une erreur, typiquement l'erreur **504**, l'utilisateur sera envoyé vers la page ``errors/server-errors.tsx``
 
-Pour plus d'information sur le routage de l'application direction [Routing Adonis.js](https://docs.adonisjs.com/guides/basics/routing)
+Pour plus d'information sur le routage de l'application, direction [Routing Adonis.js](https://docs.adonisjs.com/guides/basics/routing)
 
-## Installation 
+## Installation
 
-Pour lancer l'application il faut node >= 20.6 et npm.
+Pour lancer l'application il faut node $\ge$ 20.6 et npm.
 
 ````bash
 git clone https://github.com/0verLighT/politic_tbt.git
 ````
 
-Installer les depandences 
+Pour installer les dépendances
 
 ```bash
 npm i
@@ -59,6 +60,4 @@ npm run dev
 
 ## Docker
 
-may be ? 
-
-
+Peut-être plus tard 
