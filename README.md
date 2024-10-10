@@ -11,7 +11,7 @@ Vu que ce projet va devoir gérer du back-end et du front-end je vais utiliser d
 
 - [Adonis.js](https://adonisjs.com) : C'est un frameworks qui permet de gérer le back-end d'une application web avec des systèmes de gestion de routes, des modèles pour les bases de données avec leur propre ORM [lucid](https://lucid.adonisjs.com/docs/introduction), des validator avec [vine](https://vinejs.dev/docs/introduction), Adonis permet aussi de gérer un système de compte avec son propre système de connexion ou via Ouath2 pour ce connecter via Google, Github ect…
 
-- [React](https://fr.react.dev?uwu=true) : React lui sera là pour la partie interface avec [Tailwind CSS](https://tailwindcss.com/) pour faire le style, et pour pouvoir gérer possiblement un classement et une page des profils utilisateurs.
+- [Vue3](https://fr.vuejs.org/guide/introduction) : Vue3 lui sera là pour la partie interface avec [Tailwind CSS](https://tailwindcss.com/) pour faire le style, et pour pouvoir gérer possiblement un classement et une page des profils utilisateurs.
 
 Pour ce qui est de stocker les données des utilisateurs, je vais pour ce projet utiliser [PostgreSQL](https://www.postgresql.org/) avec comme ORM celui de Adonis Lucid.
 
@@ -30,8 +30,8 @@ Pour rejoindre une partie, l'utilisateur saisit un code unique généré par le 
 
 ```
 ├── errors
-│   ├── not_found.tsx
-│   └── server_error.tsx
+│   ├── not_found.tsx
+│   └── server_error.tsx
 └── home.tsx
 ```
 La route `home.tsx` équivaut à la racine. Pour le vérifier, il suffit de se rendre dans le fichier `start/routes.ts`.

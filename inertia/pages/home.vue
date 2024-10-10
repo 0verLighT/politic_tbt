@@ -1,0 +1,10 @@
+<script setup lang="ts">
+import { Button } from '~/components/ui/button'
+</script>
+
+<template>
+  <div class="container">
+    <div class="title">Home</div>
+    <Button variant="default">Click me</Button>
+  </div>
+</template>
