@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { Button } from '~/components/ui/button'
+
+import SwitchBrightness from "~/components/SwitchBrightness.vue";
 </script>
 
 <template>
-  <div class="container">
-    <div class="title">Home</div>
-    <Button variant="default">Click me</Button>
-  </div>
+  <SwitchBrightness />
 </template>
