@@ -8,5 +8,14 @@
 */
 
 import router from '@adonisjs/core/services/router'
-router.on('/').renderInertia('home')
-router.on('/auth/login').renderInertia('auth/login').as('auth.login')
+router
+  .get('/', async ({ inertia }) => {
+    return inertia.render('home')
+  })
+  .as('home')
+
+router
+  .get('/auth/login', async ({ inertia }) => {
+    return inertia.render('auth/login')
+  })
+  .as('auth.login')
