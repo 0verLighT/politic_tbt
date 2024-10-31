@@ -19,8 +19,12 @@ router
     return inertia.render('auth/login')
   })
   .as('auth.login')
-router
-  .get('/auth/register', async ({ inertia }) => {
-    return inertia.render('auth/register')
+
+router.group(() => {
+  router.get('/auth/register', async ({ inertia }) => {
+    return inertia.render("auth/register")
   })
-  .as('auth.register')
+  router.post("auth/register", async (ctx) => {
+    return ctx.response.redirect().back()
+  })
+})
