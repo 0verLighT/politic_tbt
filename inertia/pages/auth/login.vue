@@ -1,21 +1,24 @@
 <script setup lang="ts">
 import { Input } from '~/components/ui/input'
 import { Button } from '~/components/ui/button'
-const submit = (e: any) => {
-  const formData = new FormData(e.target)
-  const data = Object.fromEntries(formData)
-  console.log(data)
-}
+import { useForm } from "@inertiajs/vue3";
+
+
+const form = useForm({
+  email : "",
+  password : ""
+})
 </script>
 
 <template>
   <div class="flex items-center justify-center h-screen">
-    <form class="flex flex-col gap-2 w-full max-w-sm" @submit.prevent="submit">
+    <form class="flex flex-col gap-2 w-full max-w-sm" @submit.prevent="form.post('/auth/login')">
+    <h1 class="text-2xl font-bold">Login</h1>
       <div class="flex flex-col gap-1">
-        <Input type="email" placeholder="Email" name="email" />
-        <Input type="password" placeholder="Password" name="password" />
+        <Input type="email" placeholder="Email" name="email" v-model="form.email" />
+        <Input type="password" placeholder="Password" name="password" v-model="form.password"/>
       </div>
-      <Button type="submit">Login</Button>
+      <Button type="submit" :disabled="form.processing">Login</Button>
     </form>
   </div>
 </template>
