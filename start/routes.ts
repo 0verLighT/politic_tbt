@@ -14,17 +14,20 @@ router
   })
   .as('home')
 
-router
-  .get('/auth/login', async ({ inertia }) => {
-    return inertia.render('auth/login')
-  })
-  .as('auth.login')
-
 router.group(() => {
-  router.get('/auth/register', async ({ inertia }) => {
+  router.get('/register', async ({ inertia }) => {
     return inertia.render("auth/register")
   })
-  router.post("auth/register", async (ctx) => {
+  router.post("/register", async (ctx) => {
     return ctx.response.redirect().back()
   })
-})
+}).prefix("auth")
+
+router.group(() => {
+  router.get("/login", async (ctx) => {
+    return ctx.inertia.render("auth/login")
+  })
+  router.post("/login", async (ctx) => {
+    return ctx.response.redirect().back()
+  })
+}).prefix("auth")
