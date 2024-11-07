@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Input } from '~/components/ui/input'
 import { Button } from '~/components/ui/button'
-import {useForm} from "@inertiajs/vue3";
+import { useForm, Head } from '@inertiajs/vue3'
 import { Link } from '@tuyau/inertia/vue'
 
 const form = useForm({
@@ -12,6 +12,9 @@ const form = useForm({
 </script>
 
 <template>
+  <Head>
+    <title>Register</title>
+  </Head>
   <div class="flex items-center justify-center h-screen">
     <form class="flex flex-col gap-2 w-full max-w-sm" @submit.prevent="form.post('/auth/register', {
       onSuccess: () => form.reset()
