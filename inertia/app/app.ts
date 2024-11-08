@@ -6,8 +6,6 @@ import { createSSRApp, h } from 'vue'
 import type { DefineComponent } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
-import { TuyauPlugin } from '@tuyau/inertia/vue'
-import { tuyau } from './tuyau'
 
 const appName = import.meta.env.VITE_APP_NAME || 'AdonisJS'
 
@@ -26,7 +24,6 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
     createSSRApp({ render: () => h(App, props) })
       .use(plugin)
-      .use(TuyauPlugin, { client: tuyau })
       .mount(el)
   },
 })
