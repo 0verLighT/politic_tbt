@@ -4,13 +4,13 @@ import WebRegister from '#actions/auth/http/web_register'
 import { inject } from '@adonisjs/core'
 
 export default class RegisterController {
-  async show({ inertia }: HttpContext) {
-    return inertia.render('auth/register')
-  }
   @inject()
   async store({ request, response }: HttpContext, WebRegister: WebRegister) {
     const data = await request.validateUsing(RegisterValidator)
     await WebRegister.handle({ data })
-    return response.redirect().toRoute('/')
+    return response.redirect().toPath('/')
+  }
+  async show({ inertia }: HttpContext) {
+    return inertia.render('auth/register')
   }
 }

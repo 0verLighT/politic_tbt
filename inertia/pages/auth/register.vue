@@ -9,7 +9,7 @@ defineProps<{
   errors: Record<string, string[]>
 }>()
 const form = useForm({
-  name: '',
+  username: '',
   email: '',
   password: '',
 })
@@ -29,9 +29,9 @@ const form = useForm({
   >
     <h3 class="text-2xl font-bold">Register</h3>
     <div class="flex flex-col gap-1">
-      <Input type="text" placeholder="Name" v-model="form.name" />
-      <div v-if="form.errors.name">
-        <span class="text-red-600">{{ form.errors.name }}</span>
+      <Input type="text" placeholder="Username" v-model="form.username" />
+      <div v-if="form.errors.username">
+        <span class="text-red-600">{{ form.errors.username }}</span>
       </div>
       <Input type="email" placeholder="Email" v-model="form.email" />
       <div v-if="form.errors.email">
