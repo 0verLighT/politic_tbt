@@ -3,8 +3,8 @@ import { getDirname } from '@adonisjs/core/helpers'
 import inertia from '@adonisjs/inertia/client'
 import vue from '@vitejs/plugin-vue'
 import adonisjs from '@adonisjs/vite/client'
-import tailwind from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
+import tailwind from 'tailwindcss'
 
 export default defineConfig({
   plugins: [
@@ -17,6 +17,7 @@ export default defineConfig({
       plugins: [tailwind(), autoprefixer()],
     },
   },
+
   /**
    * Define aliases for importing modules from
    * your frontend code

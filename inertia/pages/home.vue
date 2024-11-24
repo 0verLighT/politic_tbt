@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3'
 </script>
-
 <template>
-  <Head>
-    <title>Home</title>
-  </Head>
-  <h1>Home</h1>
+  <h1>home</h1>
+  <Link method="post" href="/logout"> Logout </Link>
 </template>

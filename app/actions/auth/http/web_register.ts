@@ -1,8 +1,8 @@
-import { Infer } from '@vinejs/vine/types'
+import User from '#models/user'
 import { RegisterValidator } from '#validators/auth'
 import { inject } from '@adonisjs/core'
 import { HttpContext } from '@adonisjs/core/http'
-import User from '#models/user'
+import { Infer } from '@vinejs/vine/types'
 
 type Params = {
   data: Infer<typeof RegisterValidator>
@@ -14,7 +14,7 @@ export default class WebRegister {
 
   async handle({ data }: Params) {
     const user = await User.create(data)
-    this.ctx.auth.use('web').login(user)
+    await this.ctx.auth.use('web').login(user)
     return { user }
   }
 }

@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { Input } from '~/components/ui/input'
 import { Button } from '~/components/ui/button'
-import { useForm, Head, Link } from '@inertiajs/vue3'
-import AuthLayout from '~/layout/AuthLayout.vue'
+import { useForm, Head } from '@inertiajs/vue3'
 
-defineOptions({ layout: AuthLayout })
 defineProps<{
   errors: Record<string, string[]>
 }>()
+
 const form = useForm({
   username: '',
   email: '',
@@ -42,9 +41,6 @@ const form = useForm({
         <span class="text-red-600">{{ form.errors.password }}</span>
       </div>
     </div>
-    <Link href="/auth/login">
-      <Button variant="ghost"> Already have account, Connect here </Button>
-    </Link>
     <Button type="submit" :disabled="form.processing">Register</Button>
   </form>
 </template>

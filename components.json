@@ -7,7 +7,8 @@
     "config": "tailwind.config.js",
     "css": "./inertia/css/app.css",
     "baseColor": "neutral",
-    "cssVariables": true
+    "cssVariables": true,
+    "prefix": ""
   },
   "framework": "vite",
   "aliases": {
