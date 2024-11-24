@@ -7,32 +7,19 @@
 |
 */
 
+const ResgisterController = () => import('#controllers/auth/registers_controller')
+const LoginController = () => import('#controllers/auth/login_controller')
+const logoutController = () => import('#controllers/auth/logouts_controller')
 import router from '@adonisjs/core/services/router'
-import { LoginValidator, RegisterValidator } from '#validators/auth'
-router
-  .get('/', async ({ inertia }) => {
-    return inertia.render('home')
-  })
-  .as('home')
+router.on('/').renderInertia('home')
 
-// AUTH ROUTES
 router
   .group(() => {
-    router.get('/register', async ({ inertia }) => {
-      return inertia.render('auth/register')
-    })
-    router.post('/register', async (ctx) => {
-      const data = await ctx.request.validateUsing(RegisterValidator)
-      console.log(data)
-      return ctx.response.redirect().back()
-    })
-    router.get('/login', async (ctx) => {
-      return ctx.inertia.render('auth/login')
-    })
-    router.post('/login', async (ctx) => {
-      const data = await ctx.request.validateUsing(LoginValidator)
-      console.log(data)
-      return ctx.response.redirect().back()
-    })
+    router.get('/register', [ResgisterController, 'show'])
+    router.post('/register', [ResgisterController, 'store'])
+    router.get('/login', [LoginController, 'show'])
+    router.post('/login', [LoginController, 'store'])
   })
   .prefix('auth')
+
+router.post('/logout', [logoutController, 'store'])

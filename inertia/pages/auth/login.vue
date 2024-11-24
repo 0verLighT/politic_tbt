@@ -2,9 +2,7 @@
 import { Input } from '~/components/ui/input'
 import { Button } from '~/components/ui/button'
 import { useForm, Head, Link } from '@inertiajs/vue3'
-import AuthLayout from '~/layout/AuthLayout.vue'
 
-defineOptions({ layout: AuthLayout })
 defineProps<{
   errors: Record<string, string[]>
 }>()
