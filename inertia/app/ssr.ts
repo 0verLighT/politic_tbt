@@ -1,7 +1,7 @@
 import { createInertiaApp } from '@inertiajs/vue3'
 import { renderToString } from '@vue/server-renderer'
 import { createSSRApp, h, type DefineComponent } from 'vue'
-import AppLayout from '~/app/layout/AppLayout.vue'
+import AppLayout from '~/layout/AppLayout.vue'
 
 export default function render(page: any) {
   return createInertiaApp({
