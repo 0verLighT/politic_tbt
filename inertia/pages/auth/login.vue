@@ -6,7 +6,8 @@ import AuthLayout from '~/layout/AuthLayout.vue'
 
 defineOptions({ layout: AuthLayout })
 defineProps<{
-  errors: Record<string, string[]>
+  errors: Record<string, string[]>,
+  exceptions : Record<string, string[]>
 }>()
 
 const form = useForm({
@@ -37,9 +38,12 @@ const form = useForm({
       <div v-if="form.errors.password">
         <span class="text-red-600">{{ form.errors.password }}</span>
       </div>
+      <div v-if="exceptions">
+        <span class="text-red-600">{{ exceptions.E_INVALID_CREDENTIALS }}</span>
+      </div>
     </div>
     <Link href="/auth/register">
-      <Button variant="ghost"> Don't have account, Register here </Button>
+      <Button variant="link"> Don't have account, Register here </Button>
     </Link>
     <Button type="submit" :disabled="form.processing">Login</Button>
   </form>
