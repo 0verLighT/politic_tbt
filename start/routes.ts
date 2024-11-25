@@ -7,6 +7,8 @@
 |
 */
 
+import { middleware } from "#start/kernel";
+
 const ResgisterController = () => import('#controllers/auth/registers_controller')
 const LoginController = () => import('#controllers/auth/login_controller')
 const logoutController = () => import('#controllers/auth/logouts_controller')
@@ -21,5 +23,6 @@ router
     router.post('/login', [LoginController, 'store'])
   })
   .prefix('auth')
+  .use(middleware.guest())
 
 router.post('/logout', [logoutController, 'store'])
