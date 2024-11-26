@@ -2,6 +2,7 @@
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -9,6 +10,7 @@ import {
   SidebarMenuButton,
 } from '~/components/ui/sidebar'
 import { Link } from '@inertiajs/vue3'
+import ButtonTheme from '~/components/ButtonTheme.vue'
 </script>
 
 <template>
@@ -24,6 +26,19 @@ import { Link } from '@inertiajs/vue3'
           </SidebarMenu>
         </SidebarGroupContent>
       </SidebarGroup>
+      <SidebarGroup>
+        <SidebarGroupLabel>User</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuButton>
+              <Link href="/user/:username">{{ user ? user.username : 'username' }}</Link>
+            </SidebarMenuButton>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
     </SidebarContent>
+    <SidebarFooter>
+      <ButtonTheme />
+    </SidebarFooter>
   </Sidebar>
 </template>
