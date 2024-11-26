@@ -1,4 +1,3 @@
-// Path: app/controllers/auth/registers_controller.ts
 import type { HttpContext } from '@adonisjs/core/http'
 import { RegisterValidator } from '#validators/auth'
 import { inject } from '@adonisjs/core'

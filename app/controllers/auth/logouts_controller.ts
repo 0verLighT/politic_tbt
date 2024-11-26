@@ -1,4 +1,3 @@
-// Path: app/controllers/auth/logouts_controller.ts
 import type { HttpContext } from '@adonisjs/core/http'
 import { inject } from '@adonisjs/core'
 import WebLogout from '#actions/auth/http/web_logout'

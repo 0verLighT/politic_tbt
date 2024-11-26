@@ -1,4 +1,3 @@
-// Path: app/actions/auth/http/web_register.ts
 import User from '#models/user'
 import { LoginValidator } from '#validators/auth'
 import { inject } from '@adonisjs/core'
